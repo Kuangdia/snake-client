@@ -27,6 +27,7 @@ const handleUserInput = function (key) {
   if (key === 'd') {
     connection.write(d);
   }
+  connection.write("Say: hello");
 };
 
 const setupInput = function (conn) {
