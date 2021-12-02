@@ -4,8 +4,8 @@ const connect = require('./client');
 const setupInput = require('./input');
 
 // now you have connected;
-connect();
+let conn = connect();
 
 // now you can add input (type into terminal);
-setupInput();
+setupInput(conn);
 
