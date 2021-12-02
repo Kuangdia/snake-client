@@ -1,7 +1,5 @@
 const net = require("net");
 
-console.log("Connecting ...");
-
 // establishes a connection with the game server
 const connect = function () {
   const conn = net.createConnection({
