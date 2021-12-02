@@ -1,9 +1,6 @@
 const net = require("net");
-const readline = require('readline');
 
-// const rl = readline.createInterface({
-//   input: process.stdin
-// });
+console.log("Connecting ...");
 
 // establishes a connection with the game server
 const connect = function () {
@@ -20,12 +17,18 @@ const connect = function () {
     // check that we're connected to server
     console.log("You are connected");
     // writes to server
-    conn.write("Name: XXH")
+    conn.write("Name: XXH");
   })
 
-  // rl.on('line', (input) => {
-  //   conn.write(`${input}\n`)
-  // })
+  /* 
+  * you can write as many connect callbacks but this runs too fast for tcp to show
+  conn.on('connect', () => {
+    // check that we're connected to server
+    console.log("You are connected");
+    // writes to server
+    conn.write("Name: XXH");
+  })
+  */
 
   // reads data sent by server
   conn.on('data', (data) => {
@@ -34,9 +37,5 @@ const connect = function () {
 
   return conn;
 };
-
-
-console.log("Connecting ...");
-connect();
 
 module.exports = connect;
